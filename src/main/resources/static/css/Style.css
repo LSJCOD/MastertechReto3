@@ -1,83 +1,87 @@
-*{
 
+form.Form {
+    margin: 50px auto;
+    width: 95%;
+    border: black solid 3px;
+    background: lightgray;
+    color: white;
+    border-radius: 10px;
 }
 
-header {
-    position: relative;
+.mb-3 {
+    width: 90%;
     margin: auto;
-    width: auto;
-    height: 80px;
-    background: antiquewhite;
+}
+
+.btn-primary {
+
+    margin: 5%;
+    width: 90%;
+
+}
+
+p.h2 {
     text-align: center;
+    background: lightgray;
+    color: white;
+    margin: 10px;
+    border-radius: 10px;
 }
 
+div#top {
+    border: white 3px solid;
+    margin: auto;
+    height: 17cm;
+    background: antiquewhite;
+}
 
-
-
-footer {
+#top li {
     position: relative;
-    margin: 20px auto;
-    width: auto;
-    height: 70px;
-    background: #888;
-}
-
-
-
-#top ul li{
+    color: lightgray;
     margin: auto;
     float: left;
     width: 20%;
-    height: 20px;
-    /*background: brown;*/
-    color: white;
+    height: auto;
+
 }
 
-
-
-div.Tabla{
-
-    margin: auto;
-    width: 50%;
-    position: relative;
+div.carousel-inner {
+    background: lightskyblue;
+    width: 90%;
+    margin: 10px auto;
+    color: black;
     text-align: center;
-    top: 14cm;
-    /*background: lightgray;*/
-
 
 }
 
 
 
-/*Nuevo*/
-div.Formularias {
-
+div.carousel slide{
+    background: lightskyblue;
+    margin: auto;
+    width: 90%;
     text-align: center;
-    width: auto;
-    height: 450px;
-    background: darkolivegreen;
-    margin: 10px;
-    border-radius: 10%;
-    padding-bottom: 10px;
+    color: black;
 }
 
-input{
+button.carousel-control-next {
     margin: auto;
-    width: 80%;
-    height: 10%;
+    width: 60px;
+    height: 60px;
+    color: black;
 }
-
-
-table,tr,th{
+button.carousel-control-prev {
     margin: auto;
-    border-collapse: collapse;
-    border: black solid;
-
+    width: 60px;
+    height: 60px;
+    color: black;
 }
 
-/*div.Tables{*/
-/*    top: 10cm;*/
-/*    right: 10cm;*/
-/*    background: aqua;*/
-
-/*}*/
+footer{
+    position: absolute;
+    margin: auto;
+    width: 100%;
+    height: 2cm;
+    background: lightgreen;
+    text-align: center;
+}

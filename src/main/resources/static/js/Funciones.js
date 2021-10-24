@@ -1,77 +1,8 @@
-//<-------------------------------------------- Auditorios ------------------------------------------->
-
-function traerInformacionAudience() {
-    $.ajax({
-        url: "http://localhost:8080/api/Audience/all",
-        type: "GET",
-        datatype: "JSON",
-        success: function (respuesta1) {
-            console.log(respuesta1);
-            pintarRespuesta1(respuesta1);
-        }
-    });
-}
-
-function pintarRespuesta1(respuesta1) {
-
-    let myTable = "<table>";
-
-    myTable += "<tr>";
-    myTable += "<th>" + "NAME" + "</th>";
-    myTable += "<th>" + "OWNER" + "</th>";
-    myTable += "<th>" + "CAPACITY" + "</th>";
-    myTable += "<th>" + "DESCRIPTION" + "</th>";
-    myTable += "</tr>";
-
-    for (i = 0; i < respuesta1.length; i++) {
-        myTable += "<tr>";
-        myTable += "<td>" + respuesta1[i].name + "</td>";
-        myTable += "<td>" + respuesta1[i].owner + "</td>";
-        myTable += "<td>" + respuesta1[i].capacity + "</td>";
-        myTable += "<td>" + respuesta1[i].description + "</td>";
-        myTable += "</tr>";
-    }
-    myTable += "</table>";
-    $("#resultado").html(myTable);
-}
-
-
-function guardarInformacionAudience() {
-    let var1 = {
-        name: $("#Bname").val(),
-        owner: $("#Bowner").val(),
-        capacity: $("#Bcapacity").val(),
-        description: $("#Bdescription").val()
-    };
-
-    $.ajax({
-        type: 'POST',
-        contentType: "application/json; charset=utf-8",
-        dataType: 'JSON',
-        data: JSON.stringify(var1),
-
-        url: "http://localhost:8080/api/Audience/save",
-        success: function (response1) {
-            console.log(response1);
-            console.log("Se guardo correctamente");
-            alert("Se guardo correctamente");
-            window.location.reload()
-
-        },
-
-        error: function (jqXHR, textStatus, errorThrown) {
-            window.location.reload()
-            alert("No se guardo correctamente");
-        }
-    });
-
-}
-
 
 //<-------------------------------------------- Categorias ------------------------------------------->
 function traerInformacionCategorias() {
     $.ajax({
-        url: "http://localhost:8080/api/Category/all",
+        url: "http://129.213.166.217:8080/api/Category/all",
         type: "GET",
         datatype: "JSON",
         success: function (respuesta0) {
@@ -113,9 +44,79 @@ function guardarInformacionCategorias() {
         dataType: 'JSON',
         data: JSON.stringify(var0),
 
-        url: "http://localhost:8080/api/Category/save",
+        url: "http://129.213.166.217:8080/api/Category/save",
         success: function (response0) {
             console.log(response0);
+            console.log("Se guardo correctamente");
+            alert("Se guardo correctamente");
+            window.location.reload()
+
+        },
+
+        error: function (jqXHR, textStatus, errorThrown) {
+            window.location.reload()
+            alert("No se guardo correctamente");
+        }
+    });
+
+}
+
+//<-------------------------------------------- Auditorios ------------------------------------------->
+
+function traerInformacionAudience() {
+    $.ajax({
+        url: "http://129.213.166.217:8080/api/Audience/all",
+        type: "GET",
+        datatype: "JSON",
+        success: function (respuesta1) {
+            console.log(respuesta1);
+            pintarRespuesta1(respuesta1);
+        }
+    });
+}
+
+function pintarRespuesta1(respuesta1) {
+
+    let myTable = "<table>";
+
+    myTable += "<tr>";
+    myTable += "<th>" + "NAME" + "</th>";
+    myTable += "<th>" + "OWNER" + "</th>";
+    myTable += "<th>" + "CAPACITY" + "</th>";
+    myTable += "<th>" + "DESCRIPTION" + "</th>";
+    myTable += "</tr>";
+
+    for (i = 0; i < respuesta1.length; i++) {
+        myTable += "<tr>";
+        myTable += "<td> <button onclick='borrarElementoAudience(" + items[i].id + ")'>Borrar</button>";
+        myTable += "<td>" + respuesta1[i].name + "</td>";
+        myTable += "<td>" + respuesta1[i].owner + "</td>";
+        myTable += "<td>" + respuesta1[i].capacity + "</td>";
+        myTable += "<td>" + respuesta1[i].description + "</td>";
+        myTable += "</tr>";
+    }
+    myTable += "</table>";
+    $("#resultado").html(myTable);
+}
+
+
+function guardarInformacionAudience() {
+    let var1 = {
+        name: $("#Bname").val(),
+        owner: $("#Bowner").val(),
+        capacity: $("#Bcapacity").val(),
+        description: $("#Bdescription").val()
+    };
+
+    $.ajax({
+        type: 'POST',
+        contentType: "application/json; charset=utf-8",
+        dataType: 'JSON',
+        data: JSON.stringify(var1),
+
+        url: "http://129.213.166.217:8080/api/Audience/save",
+        success: function (response1) {
+            console.log(response1);
             console.log("Se guardo correctamente");
             alert("Se guardo correctamente");
             window.location.reload()
@@ -134,7 +135,7 @@ function guardarInformacionCategorias() {
 
 function traerInformacionClientes() {
     $.ajax({
-        url: "http://localhost:8080/api/Client/all",
+        url: "http://129.213.166.217:8080/api/Client/all",
         type: "GET",
         datatype: "JSON",
         success: function (respuesta2) {
@@ -182,7 +183,7 @@ function guardarInformacionClientes() {
         dataType: 'JSON',
         data: JSON.stringify(var2),
 
-        url: "http://localhost:8080/api/Client/save",
+        url: "http://129.213.166.217:8080/api/Client/save",
         success: function (response2) {
             console.log(response2);
             console.log("Se guardo correctamente");
@@ -203,7 +204,7 @@ function guardarInformacionClientes() {
 
 function traerInformacionMensajes() {
     $.ajax({
-        url: "http://localhost:8080/api/Message/all",
+        url: "http://129.213.166.217:8080/api/Message/all",
         type: "GET",
         datatype: "JSON",
         success: function (respuesta4) {
@@ -243,7 +244,7 @@ function guardarInformacionMensajes() {
         dataType: 'JSON',
         data: JSON.stringify(var4),
 
-        url: "http://localhost:8080/api/Message/save",
+        url: "http://129.213.166.217:8080/api/Message/save",
         success: function (response4) {
             console.log(response4);
             console.log("Se guardo correctamente");
@@ -264,7 +265,7 @@ function guardarInformacionMensajes() {
 
 function traerInformacionReservaciones() {
     $.ajax({
-        url: "http://localhost:8080/api/Reservation/all",
+        url: "http://129.213.166.217:8080/api/Reservation/all",
         type: "GET",
         datatype: "JSON",
         success: function (respuesta3) {
@@ -310,7 +311,7 @@ function guardarInformacionReservaciones() {
         dataType: 'JSON',
         data: JSON.stringify(var3),
 
-        url: "http://localhost:8080/api/Reservation/save",
+        url: "http://129.213.166.217:8080/api/Reservation/save",
         success: function (response3) {
             console.log(response3);
             console.log("Se guardo correctamente");
